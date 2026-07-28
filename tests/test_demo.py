@@ -1,12 +1,14 @@
 import requests
 
+BASE = "https://api.github.com"
 
-def test_get_request():
-    r = requests.get("https://jsonplaceholder.typicode.com/posts/1")
+
+def test_get_repos():
+    r = requests.get(f"{BASE}/repos/maya085223-bot/auto-test-demo")
     assert r.status_code == 200
+    assert r.json()["name"] == "auto-test-demo"
 
 
-def test_post_request():
-    r = requests.post("https://jsonplaceholder.typicode.com/posts", json={"title": "foo", "body": "bar"})
-    assert r.status_code == 201
-    assert r.json()["title"] == "foo"
+def test_get_root():
+    r = requests.get(BASE)
+    assert r.status_code == 200
