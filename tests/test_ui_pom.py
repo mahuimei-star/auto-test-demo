@@ -18,13 +18,17 @@ def test_page_loads():
 
 @allure.title("Test click link on the-internet")
 @allure.feature("UI Test - POM + DDT")
-@pytest.mark.parametrize("link", ["A/B Testing", "Checkboxes", "Dropdown"])
-def test_click_link(link):
+@pytest.mark.parametrize("link,expected", [
+    ("A/B Testing", "A/B Test Control"),
+    ("Checkboxes", "Checkboxes"),
+    ("Dropdown", "Dropdown"),
+])
+def test_click_link(link, expected):
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
         demo = DemoPage(page)
         demo.navigate()
         demo.click_link(link)
-        assert link in demo.get_body_text()
+        assert expected in demo.get_body_text()
         browser.close()
