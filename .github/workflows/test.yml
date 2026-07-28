@@ -12,4 +12,9 @@ jobs:
           python-version: '3.12'
       - run: pip install -r requirements.txt
       - run: playwright install chromium
-      - run: pytest tests/ --verbose
+      - run: pytest tests/ --verbose --alluredir=allure-results
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: allure-results
+          path: allure-results
