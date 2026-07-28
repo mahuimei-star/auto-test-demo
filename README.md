@@ -8,7 +8,7 @@
 auto-test-demo/
 ├── .github/workflows/test.yml    # CI/CD 流水线配置
 ├── pages/
-│   └── baidu_page.py              # POM：页面对象封装
+│   └── demo_page.py              # POM：页面对象封装
 ├── tests/
 │   ├── test_demo.py               # 接口测试（pytest + requests + Allure）
 │   └── test_ui_pom.py             # UI测试（Playwright + POM + DDT + Allure）
@@ -22,7 +22,7 @@ auto-test-demo/
 | 测试类型 | 工具 | 说明 |
 |---------|------|------|
 | 接口测试 | pytest + requests | 调用 GitHub API 验证返回 |
-| UI测试 | Playwright + POM | 页面对象模式，测试百度页面标题 |
+| UI测试 | Playwright + POM | 页面对象模式，测试 the-internet 页面 |
 | 数据驱动 | DDT (pytest.mark.parametrize) | 多组数据运行同一用例 |
 | 测试报告 | Allure | 结构化 HTML 测试报告 |
 
