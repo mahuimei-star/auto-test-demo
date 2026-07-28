@@ -1,7 +1,7 @@
 import allure
 import pytest
 from playwright.sync_api import sync_playwright
-from pages.baidu_page import DemoPage
+from pages.demo_page import DemoPage
 
 
 @allure.title("Test the-internet page loads")
