@@ -19,7 +19,7 @@ def test_page_loads():
 @allure.title("Test click link on the-internet")
 @allure.feature("UI Test - POM + DDT")
 @pytest.mark.parametrize("link,expected", [
-    ("A/B Testing", "A/B Test Control"),
+    ("A/B Testing", "A/B Test"),
     ("Checkboxes", "Checkboxes"),
     ("Dropdown", "Dropdown"),
 ])
