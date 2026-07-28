@@ -2,10 +2,6 @@
 
 A demo project for automated testing with CI/CD pipeline, showcasing API testing and UI automation.
 
-自动化测试 Demo 项目，集成 CI/CD 流水线，用于展示接口测试和 UI 自动化测试能力。
-
----
-
 ## Project Structure
 
 ```
