@@ -1,5 +1,7 @@
 # Auto Test Demo
 
+[![CI](https://github.com/mahuimei-star/auto-test-demo/actions/workflows/test.yml/badge.svg)](https://github.com/mahuimei-star/auto-test-demo/actions)
+
 一个集成 CI/CD 的自动化测试演示项目，覆盖 API 接口测试 与 UI 自动化测试，展示了测试框架的核心设计能力。
 
 ## 设计亮点
@@ -12,6 +14,7 @@
 
 ## Project Structure
 
+```
 auto-test-demo/
 ├── .github/workflows/test.yml    # CI/CD pipeline config
 ├── pages/
@@ -22,6 +25,7 @@ auto-test-demo/
 ├── data/                         # test data files
 ├── requirements.txt              # Python dependencies
 └── README.md                     # project documentation
+```
 
 ## Test Framework
 
@@ -45,9 +49,11 @@ Using GitHub Actions. Triggered on every git push:
 
 ## Local Run
 
+```
 pip install -r requirements.txt
 playwright install chromium
 pytest tests/ --verbose --alluredir=allure-results
+```
 
 ## Contact
 
