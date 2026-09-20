@@ -1,19 +1,20 @@
 import allure
 import requests
 
-BASE = "https://api.github.com"
+BASE = "https://jsonplaceholder.typicode.com"
 
 
-@allure.title("Test get repository info")
-@allure.feature("GitHub API")
-def test_get_repos():
-    r = requests.get(f"{BASE}/repos/maya085223-bot/auto-test-demo")
+@allure.title("Test get a single post")
+@allure.feature("JSONPlaceholder API")
+def test_get_post():
+    r = requests.get(f"{BASE}/posts/1")
     assert r.status_code == 200
-    assert r.json()["name"] == "auto-test-demo"
+    assert r.json()["id"] == 1
 
 
-@allure.title("Test GitHub API root")
-@allure.feature("GitHub API")
-def test_get_root():
-    r = requests.get(BASE)
+@allure.title("Test get post list")
+@allure.feature("JSONPlaceholder API")
+def test_get_posts():
+    r = requests.get(f"{BASE}/posts")
     assert r.status_code == 200
+    assert len(r.json()) == 100
